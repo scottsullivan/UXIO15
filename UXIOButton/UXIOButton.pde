@@ -16,7 +16,7 @@ void setup() {
   smooth(); //anti-alaising
   
   println(Serial.list()); //prints a list of available ports
-  arduino = new Arduino(this, Arduino.list()[6], 57600); //the [#] is where the arduino is plugged in to
+  arduino = new Arduino(this, Arduino.list()[5], 57600); //the [#] is where the arduino is plugged in to
 
   for (int i = 0; i <= 13; i++) //establishes the arduino pins that the sketch is looking at (all pins under 13)
     arduino.pinMode(i, Arduino.INPUT); //establishes that the sketch is using the pins as an input
