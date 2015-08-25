@@ -15,7 +15,6 @@ import cc.arduino.*;
 // GLOBAL VARIABLES
 // - - - - - - - - - - - - - - - - - - - - - - - 
 Arduino arduino;
-
 int pressActive = 0;
 
 // - - - - - - - - - - - - - - - - - - - - - - - 
@@ -27,13 +26,13 @@ void setup() {
   fill(#FF8664);
   noStroke();
   smooth(); 
-  
+  background(255, 255, 255);
+    
   println(Serial.list());
   arduino = new Arduino(this, Arduino.list()[5], 57600);
 
   for (int i = 0; i <= 13; i++) 
     arduino.pinMode(i, Arduino.INPUT);
-  background(255, 255, 255);
 }
 
 // - - - - - - - - - - - - - - - - - - - - - - - 
@@ -45,6 +44,6 @@ void draw() {
   if ((pressActive == 1) { 
     text("PRESSED!", width/2, height/2);
   }
-
+    background(255, 255, 255);
 }
 
