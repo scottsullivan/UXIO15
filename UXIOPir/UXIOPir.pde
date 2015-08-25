@@ -51,9 +51,9 @@ import cc.arduino.*;
 // GLOBAL VARIABLES
 // - - - - - - - - - - - - - - - - - - - - - - - 
 Arduino arduino;
-int moveCount = 0;
-int moveCurrentState = 0;
-int moveLastState = 0;
+int moveCount = -1;
+int moveCurrentState = 1;
+int moveLastState = 1;
 
 // - - - - - - - - - - - - - - - - - - - - - - - 
 // SETUP
@@ -70,7 +70,7 @@ void setup() {
   text("0", 30, height-30); 
 
   println(Arduino.list());
-  arduino = new Arduino(this, Arduino.list()[X], 57600);
+  arduino = new Arduino(this, Arduino.list()[5], 57600);
 
   for (int i = 0; i <= 13; i++)
     arduino.pinMode(i, Arduino.INPUT);
@@ -84,10 +84,10 @@ void draw() {
 
   if ((moveCurrentState != moveLastState) && (moveCurrentState == 1)) {
     moveCount++;
-    1
-      background(255, 255, 255);
+    background(255, 255, 255);
     ellipse(width/2, height/2, (moveCount * 5), (moveCount * 5));
     text(moveCount, 30, 270);
+    delay(2500);
   }
 
   moveLastState = moveCurrentState;
