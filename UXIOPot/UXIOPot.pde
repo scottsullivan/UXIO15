@@ -5,7 +5,6 @@
 // Scott Sullivan / Adaptive Path
 // - - - - - - - - - - - - - - - - - - - - - - -
 
-
 // - - - - - - - - - - - - - - - - - - - - - - - 
 // LIBRARIES
 // - - - - - - - - - - - - - - - - - - - - - - - 
@@ -24,7 +23,6 @@ float potRead = 0;
 void setup() {
   size(300, 300);
   background(255, 255, 255);
-  
   
   noStroke();
   smooth();
